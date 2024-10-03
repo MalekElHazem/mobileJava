@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">tp2ex1</string>
+    <string name="edit_message">Entrer un message</string>
+    <string name="button_send">ENVOI</string>
+</resources>

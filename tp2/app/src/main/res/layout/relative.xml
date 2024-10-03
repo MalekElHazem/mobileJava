@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/head"
+        android:layout_width="175dp"
+        android:layout_height="95dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/head" />
+
+    <ImageView
+        android:id="@+id/body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/head"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/body" />
+
+    <ImageView
+        android:id="@+id/hand_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/head"
+        android:layout_toLeftOf="@id/body"
+        android:layout_alignTop="@id/body"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/hand" />
+
+    <ImageView
+        android:id="@+id/hand_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/head"
+        android:layout_toRightOf="@id/body"
+        android:layout_alignTop="@id/body"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/hand" />
+
+
+
+    <ImageView
+        android:id="@+id/leg_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/body"
+        android:layout_marginTop="-5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="17dp"
+        android:layout_toLeftOf="@id/hand_right"
+        android:src="@drawable/leg" />
+
+    <ImageView
+        android:id="@+id/leg_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/body"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="-3dp"
+        android:layout_toRightOf="@id/hand_left"
+        android:src="@drawable/leg" />
+
+</RelativeLayout>
