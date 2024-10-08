@@ -6,14 +6,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import java.io.BufferedInputStream;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -22,7 +21,7 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main2);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.maincolor), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
@@ -46,23 +45,28 @@ public class MainActivity2 extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                float num1 = float.parseInt(txt1.getText().toString());
-                float num2 = float.praseInt(txt2.getText().toString());
+                int num1 = Integer.parseInt(txt1.getText().toString());
+                int num2 = Integer.parseInt(txt2.getText().toString());
                 float reslt = 0;
 
-                if (r1.isChecked()){
-                    reslt = num1 + num2;
-                } else if (r2.isChecked()){
-                    reslt = num1 - num2;
-                } else if (r3.isChecked()){
-                    reslt = num1 * num2;
-                } else if (r4.isChecked()){
-                    reslt = num1 / num2;
-                } else {
-                    reslt = -1;
+                if (num1 == 0 || num2 == 0 ){
+                    Toast.makeText(MainActivity2.this,"You can not choose 0",Toast.LENGTH_SHORT).show();
+                }else{
+                    if (r1.isChecked()){
+                        reslt = num1 + num2;
+                    } else if (r2.isChecked()){
+                        reslt = num1 - num2;
+                    } else if (r3.isChecked()){
+                        reslt = num1 * num2;
+                    } else if (r4.isChecked()){
+                        reslt = num1 / num2;
+                    } else {
+                        Toast.makeText(MainActivity2.this,"Check a box",Toast.LENGTH_SHORT).show();
+                    }
                 }
 
                 res.setText(reslt + "");
+
             }
         });
 
